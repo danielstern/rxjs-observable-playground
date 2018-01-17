@@ -1,0 +1,92 @@
+<head>
+    <title>Observable Playground</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.5.6/Rx.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<body class="container mt-5">
+<h1>
+    Observable Playground
+</h1>
+<h2>
+    Available in Console
+</h2>
+<article>
+    <h3>
+        Global Variables
+    </h3>
+    <h4>
+        <code>
+        Rx
+        </code>
+    </h4>
+    <p>
+        A reference to the RxJS library.
+    </p>
+    <h4>
+        <code>
+            observer
+        </code>
+    </h4>
+    <p>
+        A sample observer which logs events to the console.<br><code>Rx.Observable.fromEvent(button,'click').subscribe(observer);</code>
+    </p>
+    <h4>
+        <code>
+            observable
+        </code>
+    </h4>
+    <p>
+        A sample observable which returns 42 then completes.<br><code>observable.subscribe(event=>console.log(event));</code>
+    </p>
+    <h4>
+        <code>
+            subject
+        </code>
+    </h4>
+    <p>
+        A plain RxJS subject.<br><code>subject.subscribe(e=>console.log(e));subject.next(42);</code>
+    </p>
+    <h4>
+        <code>
+            behaviorSubject
+        </code>
+    </h4>
+    <p>
+        An RxJS behavior subject configured to return 42 as an initial value. New subscribers automatically get the last value it sent.
+        <br><code>behaviorSubject.subscribe(overserver);</code>
+        <br><code>behaviorSubject.next("Observe THIS!");behaviorSubject.subscribe(observer);</code>
+    </p>
+    <h4>
+        <code>
+            replaySubject
+        </code>
+    </h4>
+    <p>
+        An RxJS replay subject that has already sent 2 values. New subscribers automatically get the last 3 values it sent.
+        <br><code>replaySubject.subscribe(overserver);</code>
+        <br><code>replaySubject.next("Stark");replaySubject.next("Bolton"); replaySubject.subscribe(observer);</code>
+    </p>
+    <h3>
+        Static Operators
+    </h3>
+    <h4>
+        <code>
+            interval(t)
+        </code>
+    </h4>
+    <p>
+        Shortcut for <code>Rx.Observable.interval</code>. Creates an observable which pushes an event every <i>t</i> milliseconds.
+        <br><code>interval(1000).subscribe(observer)</code>
+    </p>
+
+</article>
+<h2>
+    UI Components
+</h2>
+<button class="btn btn-primary" id="button">button#button</button>
+<br>
+<code>
+    Rx.Observable.fromEvent(button,'click').subscribe(observer);
+</code>
+<script src="index.js"></script>
+</body>
