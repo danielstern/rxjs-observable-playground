@@ -1,11 +1,12 @@
 <head>
-    <title>Observable Playground</title>
+    <title>RxJS Observable Playground</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.5.6/Rx.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="icon" href="http://reactivex.io/favicon.ico"/>
 </head>
 <body class="container mt-5">
 <h1>
-    Observable Playground
+    RxJS Observable Playground
 </h1>
 <h2>
     Available in Console
@@ -53,7 +54,7 @@
     </h4>
     <p>
         An RxJS behavior subject configured to return 42 as an initial value. New subscribers automatically get the last value it sent.
-        <br><code>behaviorSubject.subscribe(overserver);</code>
+        <br><code>behaviorSubject.subscribe(observer);</code>
         <br><code>behaviorSubject.next("Observe THIS!");behaviorSubject.subscribe(observer);</code>
     </p>
     <h4>
@@ -63,7 +64,7 @@
     </h4>
     <p>
         An RxJS replay subject that has already sent 2 values. New subscribers automatically get the last 3 values it sent.
-        <br><code>replaySubject.subscribe(overserver);</code>
+        <br><code>replaySubject.subscribe(observer);</code>
         <br><code>replaySubject.next("Stark");replaySubject.next("Bolton"); replaySubject.subscribe(observer);</code>
     </p>
     <h3>
