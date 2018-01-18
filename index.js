@@ -1,5 +1,3 @@
-console.log("test");
-
 window.observer = {
     next: x=>console.log(x),
     error: e=>console.error(e),
